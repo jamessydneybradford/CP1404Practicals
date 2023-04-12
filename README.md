@@ -29,13 +29,13 @@ Some points that are worthy of consideration are as follows:
     It's important that the code we do write is readable and searchable.
     For example:  
 
-     import time
+        import time
 
-      Declare them in the global namespace for the module.
-      SECONDS_IN_A_DAY = 60 * 60 * 24
-      time.sleep(SECONDS_IN_A_DAY)
+        Declare them in the global namespace for the module.
+        SECONDS_IN_A_DAY = 60 * 60 * 24
+        time.sleep(SECONDS_IN_A_DAY)
 
-      time.sleep(86400) is not bad
+        time.sleep(86400) is not bad
 
 - Use explanatory variables (preferably from the problem domain).
     If the code refers to cities, then use the word city. For example:
