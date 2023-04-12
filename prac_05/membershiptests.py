@@ -2,7 +2,6 @@
 Membership tests
 """
 
-
 # Look before you leap LBYL
 word_to_count = {}
 for word in words:

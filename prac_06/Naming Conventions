@@ -1,0 +1,77 @@
+"""
+Naming conventions
+"""
+Follow PEP8 naming recommendations
+
+Class names should normally use the CapWords convention, e.g., StudentRecord
+Method names should follow the same convention as functions, e.g., set_value
+Public attributes should have no leading underscores
+Use one leading underscore only for non-public methods and instance variables
+N.B. There is no private in python.
+
+Many OOP approaches (like Java, C#) allow you to make a variable or function in an instance private
+"Private" means not accessible by code outside the class, only within the class (by other methods)
+PEP8 says, "We don’t use the term “private” here, since no attribute is really private in Python
+(without a generally unnecessary amount of work)."
+
+Python's approach is “We are all adults here”. No hard restrictions.
+You can use __ (double underscores) in front of any variable to avoid naming clashes with subclasses (inherited classes)
+This invokes name mangling the name to include the class, e.g., Foo.__a   becomes Foo._Foo__a
+
+
+
+def drive(self, distance):
+   """Drive the car a given distance if enough fuel."""
+    if distance > self.fuel:
+        distance = self.fuel
+        self.fuel = 0
+    else:
+        self.fuel -= distance
+    self._odometer += distance
+    return distance
+Here, distance is a LOCAL variable since it’s not self.distance, so it only exists in this function.
+self.fuel is an INSTANCE variable (also called field or attribute), available anywhere in the class
+
+When an object is printed, Python runs the __str__ method, which must return a string
+
+def __str__(self):
+    return f"{self.first_name} {self.last_name} ({self.id})"
+
+
+Printing a list of objects
+
+Code:
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def __str__(self)
+        return f"{self.name} ({self.age})"
+
+    p1 = Person("Jane", 19)
+    print(p1)
+    people = [Person("Alexa", 21), Person("Siri", 25)
+    print(people)
+Output:
+Jane (19)
+[<__main__.Person object at 0x10a72fb00>, <__main__.Person object at 0x10a73e128>]
+
+
+When Python prints a list of custom objects, it does NOT invoke the str method for each of them.
+So, define the __repr__ function, like:
+
+def __repr__(self):
+    return f"{self.name} ({self.age})"
+
+It returns a more information-rich, or official, string representation of an object.
+
+N.B.
+If a class has repr but not str, it uses repr when str is called for.
+
+
+
+
+
+
+
+
