@@ -77,6 +77,12 @@ else:
 Do this now comparing objects
 """
 
+"""
+In Python, dunder methods are methods that allow instances of a class to interact 
+with the built-in functions and operators of the language. 
+The word “dunder” comes from “double underscore”.
+They are also called magic methods 
+"""
 
 class Person:
     def __init__(self, name="", age=0):
@@ -114,10 +120,10 @@ class City:
         return self.population < other.population  # population decides who is greatest
 
     def __eq__(self, other):
-        return self.population < other.population
+        return self.population == other.population
 
     def __le__(self, other):
-        return self.population < other.population
+        return self.population <= other.population
 
     def __add__(self, other):
         return City(self.name + other.name, self.population + other.population, 100.00)
