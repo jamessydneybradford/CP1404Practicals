@@ -10,11 +10,12 @@ class Guitar:
         self.price = price
 
     def __str__(self):
-        # return f"{self.name},{self.year},{self.price}"
-        return '{' + self.name + ', ' + str(self.year) + ', ' + str(self.price) + '}'
+        # return '{' + self.name + ', ' + str(self.year) + ', ' + str(self.price) + '}'
+        return self.name, self.year, (self.price)
 
     def __repr__(self):
-        return '{' + self.name + ', ' + str(self.year) + ', ' + str(self.price) + '}'
+        # return '{' + self.name + ', ' + str(self.year) + ', ' + str(self.price) + '}'
+        return self.name, self.year, (self.price)
 
     def __lt__(self, other):
         return self.year < other.year

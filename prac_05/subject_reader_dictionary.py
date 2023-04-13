@@ -33,5 +33,4 @@ def get_data_from_file():
     input_file.close()
     return parts_list
 
-
 main()
